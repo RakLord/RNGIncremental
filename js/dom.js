@@ -34,18 +34,18 @@ function updateDOM() {
 
     mainWindow.empty();
 
+    // createText used for adding template text to main window mostly used bellow.
+    function createText(text) {
+        let newElement;
+        newElement = $("<div></div>");
+        newElement.text(text);
+        newElement.addClass("col h4 pb-2 mb-4 pe-click ");
+        return newElement
+    }
+
     // tab setup
     switch(tab) {
         case "home" :
-            function createText(text) {
-                let newElement;
-                newElement = $("<div></div>");
-                newElement.text(text);
-                newElement.addClass("col h4 pb-2 mb-4 pe-click");
-                return newElement
-            }
-    
-    
             mainWindow.append(createText("Money: 0").attr("id", "moneyDisplay"))
             mainWindow.append(createText("Money/s: 0").attr("id", "moneyDisplay1"))
             mainWindow.append(createText("Money/h: 0").attr("id", "moneyDisplay2"))
@@ -58,13 +58,7 @@ function updateDOM() {
             break;
 
         case "coinflip" :
-            function createText(text) {
-                let newElement;
-                newElement = $("<div></div>");
-                newElement.text(text);
-                newElement.addClass("col h4 pb-2 mb-4 pe-click");
-                return newElement
-            }
+
             mainWindow.append(createText("Money: 0").attr("id", "moneyDisplay"))
             break;
         }
