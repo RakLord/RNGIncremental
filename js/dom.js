@@ -58,8 +58,29 @@ function updateDOM() {
             break;
 
         case "coinflip" :
+            let coinflipContainer;
+            coinflipContainer = $("<div></div>");
+            coinflipContainer.attr("id", "coinflipContainer");
+            coinflipContainer.addClass("d-flex flex-wrap justify-content-center border-inset border-2");
+            
+            let coinImg;
+            coinImg = $("<img></img>");
+            coinImg.attr("src=/assets/coinHeads");
+            coinImg.addClass("img-fluid");
 
-            mainWindow.append(createText("Money: 0").attr("id", "moneyDisplay"))
+
+
+            let coinflipButton = $("<button></button>")
+            coinflipButton.attr("type", "button");
+            coinflipButton.addClass("btn btn-primary btn-lg");
+            coinflipButton.text("Flip")
+
+            mainWindow.append(coinflipContainer);
+            coinflipContainer.append(coinImg);
+            coinflipContainer.append(coinflipButton);
+            
+
+
             break;
         }
 

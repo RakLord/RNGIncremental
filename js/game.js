@@ -5,7 +5,7 @@ class Game {
         this.lastUpdate = data ? data.lastUpdate || new Date().getTime() : new Date().getTime();
 
         this.tab = 0;
-
+        
         this.prestige = {};
         this.upgradesBought = [];
         
