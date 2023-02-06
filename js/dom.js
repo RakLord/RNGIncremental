@@ -61,11 +61,11 @@ function updateDOM() {
             let coinflipContainer;
             coinflipContainer = $("<div></div>");
             coinflipContainer.attr("id", "coinflipContainer");
-            coinflipContainer.addClass("d-flex flex-wrap justify-content-center border-inset border-2");
+            coinflipContainer.addClass("d-flex flex-wrap ror row-cols-1 justify-content-center border-inset border-2");
             
             let coinImg;
             coinImg = $("<img></img>");
-            coinImg.attr("src=/assets/coinHeads");
+            coinImg.attr("src", "/assets/coinHeads.png");
             coinImg.addClass("img-fluid");
 
 
