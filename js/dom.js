@@ -9,7 +9,7 @@ function setupTopBar() {
         newTopBarItem.attr("id", id);
 
         if (eventName) {
-            newTopBarItem.on(eventName,{tabName: {eventParams}}, eventFunction);
+            newTopBarItem.on(eventName,{tabName: eventParams}, eventFunction);
         }
         topBar.append(newTopBarItem);
     }

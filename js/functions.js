@@ -1,5 +1,5 @@
-function switchTab(tabName) {
-    console.log("Tab", tabName.data.tabName.eventParams);
-    tab = tabName.data.tabName.eventParams;
+function switchTab({ data : {tabName}}) {
+    console.log("Tab", tabName);
+    tab = tabName;
     updateDOM();
 }
