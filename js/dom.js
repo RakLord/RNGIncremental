@@ -65,7 +65,13 @@ function updateDOM() {
             
             let coinImg;
             coinImg = $("<img></img>");
-            coinImg.attr("src", "/assets/coinHeads.png");
+            coinImg.attr("id", "coinImg");
+            if (game.coinState === 0) {
+                coinImg.attr("src", "/assets/coinHeads.png");
+            } else {
+                coinImg.attr("src", "/assets/coinTails.png");
+            }
+            
             coinImg.addClass("img-fluid");
 
 
@@ -74,6 +80,7 @@ function updateDOM() {
             coinflipButton.attr("type", "button");
             coinflipButton.addClass("btn btn-primary btn-lg");
             coinflipButton.text("Flip")
+            coinflipButton.on("click", flipCoin)
 
             mainWindow.append(coinflipContainer);
             coinflipContainer.append(coinImg);

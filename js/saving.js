@@ -19,6 +19,7 @@ function getMinimalGameObj() {
         lastUpdate: game.lastUpdate,
         upgradesBought: game.upgradesBought,
         prestige: game.prestige,
+        coinState: game.coinState,
     };
 
     return ret;
