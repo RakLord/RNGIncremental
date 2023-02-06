@@ -7,6 +7,9 @@ body {
     width: 100vw;
     background-color: #4f4d4f;
     color: #4f4d4f;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
 }
 
 #topBar > .clickable {
@@ -15,5 +18,5 @@ body {
 
 #mainWindow {
     background-color: rgba(255, 255, 255, 0.1);
-    border: 2px black dashed;
+    border: 2px black inset;
 }

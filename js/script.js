@@ -34,7 +34,7 @@ function updateDOM() {
             let newElement;
             newElement = $("<div></div>");
             newElement.text(text);
-            newElement.addClass("d-inline-flex h4 pb-2 mb-4 pe-click");
+            newElement.addClass("col h4 pb-2 mb-4 pe-click");
             return newElement
         }
 
@@ -42,10 +42,12 @@ function updateDOM() {
         mainWindow.append(createText("Money: 0").attr("id", "moneyDisplay"))
         mainWindow.append(createText("Money/s: 0").attr("id", "moneyDisplay1"))
         mainWindow.append(createText("Money/h: 0").attr("id", "moneyDisplay2"))
-        mainWindow.append(createText("Info Other"))
-        mainWindow.append(createText("Info Other"))
-        mainWindow.append(createText("Info Other"))
-        mainWindow.append(createText("Info Other"))
+        mainWindow.append(createText("Money/d: 0").attr("id", "moneyDisplay3"))
+        
+        // mainWindow.append(createText("Info Other"))
+        // mainWindow.append(createText("Info Other"))
+        // mainWindow.append(createText("Info Other"))
+        // mainWindow.append(createText("Info Other"))
 
 
     }
