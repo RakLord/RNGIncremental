@@ -1,4 +1,6 @@
 let topBar;
+let mainWindow;
+let tab;
 
 function updateDOM() {
     function addToTopBar(text, id, eventName, eventFunction) {
@@ -27,6 +29,26 @@ function updateDOM() {
     addToTopBar("Load", "buttonLoad", "click", loadGame);
 
 
+    if (tab == "home") {
+        function createText(text) {
+            let newElement;
+            newElement = $("<div></div>");
+            newElement.text(text);
+            newElement.addClass("d-inline-flex h4 pb-2 mb-4 pe-click");
+            newElement.attr("id", "moneyDisplay");
+            return newElement
+        }
+
+        mainWindow.append(createText("Money: 0"))
+        mainWindow.append(createText("Money/s: 0"))
+        mainWindow.append(createText("Money/h: 0"))
+        mainWindow.append(createText("Info Other"))
+        mainWindow.append(createText("Info Other"))
+        mainWindow.append(createText("Info Other"))
+        mainWindow.append(createText("Info Other"))
+
+
+    }
 
 
 };
@@ -34,5 +56,7 @@ function updateDOM() {
 
 $(document).ready(function() {
     topBar = $("#topBar");
+    mainWindow = $("#mainWindow");
+    tab = "home";
     updateDOM();
 });

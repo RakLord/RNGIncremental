@@ -12,3 +12,8 @@ body {
 #topBar > .clickable {
     cursor: pointer;
 }
+
+#mainWindow {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px black dashed;
+}
