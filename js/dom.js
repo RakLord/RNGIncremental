@@ -1,5 +1,5 @@
 function setupTopBar() {
-    function addToTopBar(text, id, eventName, eventFunction) {
+    function addToTopBar(text, id, eventName, eventFunction, eventParams) {
         let newTopBarItem;
         newTopBarItem = $("<div></div>").text(text);
         newTopBarItem.addClass("d-inline-flex h4 pb-2 mb-4 text-danger border-bottom border-danger pe-click");
@@ -9,16 +9,15 @@ function setupTopBar() {
         newTopBarItem.attr("id", id);
 
         if (eventName) {
-            newTopBarItem.on(eventName, eventFunction);
+            newTopBarItem.on(eventName,{tabName: {eventParams}}, eventFunction);
         }
-
         topBar.append(newTopBarItem);
     }
 
     // Top bar creation
     addToTopBar("RNG Incremental", "none");
-    addToTopBar("Home", "buttonHome", "click", switchTab("home"));
-    addToTopBar("Coinflip", "buttonCoinflip", "click", switchTab("coinflip"));
+    addToTopBar("Home", "buttonHome", "click", switchTab, "home");
+    addToTopBar("Coinflip", "buttonCoinflip", "click", switchTab, "coinflip");
 
     // Top bar save/load
     addToTopBar("Save", "buttonSave", "click", saveGame);
@@ -29,6 +28,7 @@ function setupTopBar() {
 
 function updateDOM() {
     if (topBarCreated == 0) {
+        console.log("Top bar setting up")
         setupTopBar();
     }
 
