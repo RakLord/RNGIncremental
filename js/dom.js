@@ -1,6 +1,4 @@
-function updateDOM() {
-
-    // Top bar setup
+function setupTopBar() {
     function addToTopBar(text, id, eventName, eventFunction) {
         let newTopBarItem;
         newTopBarItem = $("<div></div>").text(text);
@@ -26,6 +24,15 @@ function updateDOM() {
     addToTopBar("Save", "buttonSave", "click", saveGame);
     addToTopBar("Load", "buttonLoad", "click", loadGame);
 
+    topBarCreated = 1;
+}
+
+function updateDOM() {
+    if (topBarCreated == 0) {
+        setupTopBar();
+    }
+
+    mainWindow.empty();
 
     // tab setup
     switch(tab) {

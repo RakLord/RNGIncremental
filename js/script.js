@@ -1,6 +1,7 @@
 let topBar;
 let mainWindow;
 let tab;
+let topBarCreated = 0;
 
 
 
