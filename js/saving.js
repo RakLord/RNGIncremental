@@ -4,13 +4,17 @@ function newGame() {
 };
 
 function saveGame() {
-    localStorage.setItem("rngIncrementalSave", getSaveString());
+    localStorage.setItem("rngIncrementalSave", getFinalSaveString());
     console.log("Saved");
 };
 
+function getFinalSaveString() {
+    return btoa(getSaveString());
+}
+
 function getSaveString() {
     let save = getMinimalGameObj();
-    return btoa(JSON.stringify(save));
+    return JSON.stringify(save);
 }
 
 function getMinimalGameObj() {
@@ -21,27 +25,25 @@ function getMinimalGameObj() {
         prestige: game.prestige,
         coinState: game.coinState,
     };
-
+    console.log(ret);
     return ret;
 }
 
-function loadGame(save) {
-    save = save || localStorage.getItem("rngIncrementalSave");
+function loadGame() {
+    save = localStorage.getItem("rngIncrementalSave");
+    console.log(save);
     save = atob(save);
-    if (typeof save == "string") {
-        console.log("ADD SAVE STRING LOADING LOGIC ZZZZZZZZZZZZZ");
-    }
+    console.log(save);
+
     save = JSON.parse(save);
     console.log(save);
     game = new Game();
     if (save.version == game.version) {
-        let temp = ["lastUpdate", "upgradesBought"];
+        let temp = ["lastUpdate", "upgradesBought", "coinState"];
         temp.forEach(function (name) {
             if (name in save) game[name] = save[name];
         });
     }
-
+    console.log("Loaded");
     // Load setup stuff
-
-    
 } 

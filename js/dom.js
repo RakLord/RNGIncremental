@@ -66,11 +66,16 @@ function updateDOM() {
             let coinImg;
             coinImg = $("<img></img>");
             coinImg.attr("id", "coinImg");
-            if (game.coinState === 0) {
-                coinImg.attr("src", "/assets/coinHeads.png");
-            } else {
-                coinImg.attr("src", "/assets/coinTails.png");
-            }
+
+            switch (game.coinState) {
+                case 0: 
+                    coinImg.attr("src", "/assets/coinHeads.png");
+                    break;
+                case 1: 
+                    coinImg.attr("src", "/assets/coinTails.png");
+                    break;
+            } 
+
             
             coinImg.addClass("img-fluid");
 

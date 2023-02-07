@@ -10,6 +10,7 @@ function flipCoin(){
     console.log("Old: ", currentCoinState, " | New: ", newCoinState);
     let coinImg = $("#coinImg");
     console.log(newCoinState);
+    game.coinState = newCoinState;
     switch (newCoinState) {
         case 0: 
             coinImg.attr("src", "/assets/coinHeads.png");
